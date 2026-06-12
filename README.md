@@ -102,6 +102,7 @@ Completed internships in web development and technology-related domains, gaining
 **College:** KPR Institute of Engineering and Technology
 
 **GitHub:** https://github.com/nishanthmahalingam28-creator
+**LinkedIn:** https://www.linkedin.com/in/nishanth-mahalingam-073849380?utm_source=share_via&utm_content=profile&utm_medium=member_android
 
 ---
 
