@@ -322,28 +322,22 @@ th{
 
 /* Unordered List */
 ul {
-    background-color: #f0f8ff;
     padding: 15px;
-    border: 2px solid #0077cc;
-    border-radius: 5px;
 }
 
 ul li {
-    color: #333;
+    color: white;
     font-size: 18px;
     margin: 5px 0;
 }
 
 /* Ordered List */
 ol {
-    background-color: #fff8dc;
     padding: 15px;
-    border: 2px solid #ff9900;
-    border-radius: 5px;
 }
 
 ol li {
-    color: #444;
+    color:white;
     font-size: 18px;
     margin: 5px 0;
 }
