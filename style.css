@@ -341,6 +341,22 @@ ol li {
     font-size: 18px;
     margin: 5px 0;
 }
+
+.circuit{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.circuit img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
 /* Footer */
 
 footer{
@@ -374,6 +390,9 @@ footer{
         width:150px;
         height:150px;
     }
+    .circuit-img{
+        width: 95%;
+    }
 }
 
 @media(max-width:480px){
@@ -392,5 +411,13 @@ footer{
     .profile-img{
         width:130px;
         height:130px;
+    }
+
+    .circuit-img{
+        width: 100%;
+    }
+
+    .circuit-container{
+        padding: 5px;
     }
 }
