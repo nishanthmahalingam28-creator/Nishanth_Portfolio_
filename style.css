@@ -320,24 +320,18 @@ th{
     text-align:center;
 }
 
-/* Unordered List */
-ul {
-    padding: 15px;
-}
-
-ul li {
-    color: white;
-    font-size: 18px;
-    margin: 5px 0;
-}
-
-/* Ordered List */
+/* Center UL and OL lists */
+ul,
 ol {
-    padding: 15px;
+    width: fit-content;
+    margin: 20px auto;
+    padding-left: 30px;
+    text-align: left;
 }
 
+ul li,
 ol li {
-    color:white;
+    color: white;
     font-size: 18px;
     margin: 5px 0;
 }
