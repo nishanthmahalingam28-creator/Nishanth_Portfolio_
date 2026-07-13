@@ -280,7 +280,8 @@ article p{
 /* Form */
 
 form{
-    max-width:500px;
+    width:100%;
+    max-width:700px;
     margin:auto;
 }
 
@@ -294,11 +295,7 @@ label{
 input,
 textarea{
     width:100%;
-    padding:12px;
-    border:1px solid #64748b;
-    border-radius:8px;
-    background:#334155;
-    color:white;
+    box-sizing:border-box;
 }
 
 input:focus,
