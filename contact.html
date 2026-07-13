@@ -7,6 +7,7 @@
     <meta name="author" content="Nishanth M">
     <title>Contact | Nishanth Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="contact.js"></script>
 </head>
 <body>
     <header class="header">
@@ -53,7 +54,7 @@
         <div class="info-row">
             <span class="label">GitHub</span>
             <span class="value">
-                <a href="https://github.com/nishanthmahalingam28-creator" target="_blank">
+                <a href="https://github.com/nishanthmahalingam28-creator" target="_blank" rel="noopener noreferrer">
                     View GitHub Profile
                 </a>
             </span>
@@ -62,7 +63,9 @@
         <div class="info-row">
             <span class="label">LinkedIn</span>
             <span class="value">
-                <a href="https://www.linkedin.com/in/nishanth-mahalingam-073849380?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
+                <a href="https://www.linkedin.com/in/nishanth-mahalingam-073849380?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                    target="_blank"
+                    rel="noopener noreferrer">
                     View LinkedIn Profile
                 </a>
             </span>
@@ -71,7 +74,7 @@
 </section>
         <section class="card">
             <h2>Send a Message</h2>
-            <form>
+            <form id="contactForm">
                 <label for="name">Name</label>
                 <input
                     type="text"
@@ -86,6 +89,15 @@
                     placeholder="Enter your email"
                     required
                 >
+                <small id="emailError"></small>
+                <label for="subject">Subject</label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="Enter subject"
+                    required
+            >
                 <label for="message">Message</label>
                 <textarea
                     id="message"
@@ -93,14 +105,18 @@
                     placeholder="Enter your message"
                     required
                 ></textarea>
-                <button type="submit">
+                <button id="submitBtn" type="submit">
                     Send Message
                 </button>
+
+                <p id="statusMessage"></p>
             </form>
         </section>
     </main>
     <footer>
         <p>&copy; 2026 Nishanth M. All Rights Reserved.</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="contact.js"></script>
 </body>
 </html>
