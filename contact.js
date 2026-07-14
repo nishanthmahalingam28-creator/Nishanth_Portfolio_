@@ -12,12 +12,13 @@ import {
 // ===============================
 
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT.firebasestorage.app",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyABBmSdzxZuwRnExZur0XdQWmA8713z3YA",
+    authDomain: "nishanth-portfolio-65dac.firebaseapp.com",
+    projectId: "nishanth-portfolio-65dac",
+    storageBucket: "nishanth-portfolio-65dac.firebasestorage.app",
+    messagingSenderId: "1061463687876",
+    appId: "1:1061463687876:web:1b59613878f50599dcff91",
+    measurementId: "G-RK78LF47JY"
 };
 
 // Initialize Firebase
