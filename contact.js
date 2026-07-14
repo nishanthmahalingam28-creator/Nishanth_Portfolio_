@@ -1,118 +1,107 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
 // ===============================
-// SUPABASE CONFIGURATION
+// FIREBASE CONFIGURATION
+// Replace these values with your own Firebase config
 // ===============================
 
-const SUPABASE_URL = "YOUR_SUPABASE_URL";
-const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.firebasestorage.app",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
 
-const supabase = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_ANON_KEY
-);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 // ===============================
 // HTML ELEMENTS
 // ===============================
 
 const form = document.getElementById("contactForm");
-
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const subjectInput = document.getElementById("subject");
 const messageInput = document.getElementById("message");
 
 const submitBtn = document.getElementById("submitBtn");
-
 const statusMessage = document.getElementById("statusMessage");
-
 const emailError = document.getElementById("emailError");
 
 // ===============================
 // EMAIL VALIDATION
 // ===============================
 
-function validateEmail(email){
-
+function validateEmail(email) {
     const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     return pattern.test(email);
-
 }
 
 // ===============================
 // FORM SUBMIT
 // ===============================
 
-form.addEventListener("submit", async function(e){
+form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
     emailError.textContent = "";
     statusMessage.textContent = "";
-    statusMessage.style.color = "green";
 
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
     const subject = subjectInput.value.trim();
     const message = messageInput.value.trim();
 
-    // Empty Validation
-
-    if(name === "" || email === "" || subject === "" || message === ""){
-
+    if (!name || !email || !subject || !message) {
         statusMessage.style.color = "red";
         statusMessage.textContent = "Please fill in all fields.";
-
         return;
-
     }
 
-    // Email Validation
-
-    if(!validateEmail(email)){
-
+    if (!validateEmail(email)) {
         emailError.textContent = "Please enter a valid email address.";
-
         return;
-
     }
-
-    // Loading
 
     submitBtn.disabled = true;
-    submitBtn.innerHTML = "Sending...";
+    submitBtn.textContent = "Sending...";
 
-    // Insert into Supabase
+    try {
 
-    const { error } = await supabase
-        .from("contacts")
-        .insert([
-            {
-                name: name,
-                email: email,
-                subject: subject,
-                message: message
-            }
-        ]);
-
-    if(error){
-
-        statusMessage.style.color = "red";
-        statusMessage.textContent = "Failed to send message.";
-
-        console.error(error);
-
-    }
-    else{
+        await addDoc(collection(db, "contacts"), {
+            name,
+            email,
+            subject,
+            message,
+            createdAt: serverTimestamp()
+        });
 
         statusMessage.style.color = "green";
         statusMessage.textContent = "Message sent successfully!";
 
         form.reset();
 
+    } catch (error) {
+
+        console.error(error);
+
+        statusMessage.style.color = "red";
+        statusMessage.textContent = "Failed to send message.";
+
     }
 
     submitBtn.disabled = false;
-    submitBtn.innerHTML = "Send Message";
+    submitBtn.textContent = "Send Message";
 
 });
