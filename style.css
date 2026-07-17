@@ -211,6 +211,7 @@ img {
     color:#ffffff;
     font: size 16px;
     text-align:left;
+    flex:0 0 55%;
 }
 
 .value a{
