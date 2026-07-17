@@ -106,7 +106,7 @@ main{
 
 .card{
     background:var(--card);
-    padding:30px;
+    padding:40px;
     border-radius:16px;
     margin-bottom:25px;
     box-shadow:0 8px 25px rgba(0,0,0,0.3);
@@ -182,34 +182,17 @@ img {
 
 .personal-info,
 .contact-info{
-    max-width:900px;
-    margin:auto;
-}
-
-.contact-info{
-    max-width:700px;
+    width:100%;
+    max-width:1100px;
     margin:0 auto;
 }
 
 .info-row{
-
-    display:flex;
-
-    justify-content:space-between;
-
+    display:grid;
+    grid-template-columns:220px 1fr;
     align-items:center;
-
-    gap:20px;
-
-    flex-wrap:wrap;
-
-}
-
-.info-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 0;
+    column-gap:140px;      /* Space in the center */
+    padding:22px 0;
     border-bottom:1px solid #475569;
 }
 
@@ -218,21 +201,26 @@ img {
 }
 
 .label{
-    width:250px;
     color:#60a5fa;
-    font-weight:bold;
-    text-align:center;
+    font-size:22px;
+    font-weight:600;
+    text-align:left;
 }
 
 .value{
-    flex:1;
-    color:#fff;
-    text-align:center;
+    color:#ffffff;
+    font-size:22px;
+    text-align:left;
 }
 
 .value a{
-    color:white;
+    color:#ffffff;
     text-decoration:none;
+    transition:.3s;
+}
+
+.value a:hover{
+    color:#60a5fa;
 }
 
 a{
@@ -241,9 +229,7 @@ a{
     text-decoration:none;
 }
 
-.value a:hover{
-    color:#60a5fa;
-}
+
 
 /* Projects */
 .doc-btn a{
@@ -450,10 +436,10 @@ footer{
 /* ===============================
    MOBILE NAVIGATION
 =================================*/
-
 /* ===============================
-   RESPONSIVE
+   Responsive
 =================================*/
+
 
 @media (max-width:768px){
 
@@ -503,8 +489,22 @@ footer{
     }
 
 }
-
 @media (max-width:768px){
+
+    .navbar{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+        padding:12px;
+    }
+
+    .navbar a{
+        min-width:120px;
+        padding:10px 15px;
+        font-size:15px;
+        text-align:center;
+    }
 
     .header h1{
         font-size:32px;
@@ -514,27 +514,30 @@ footer{
         font-size:16px;
     }
 
+    .hero img,
+    .profile-img{
+        width:140px;
+        height:140px;
+    }
+
+    .info-row{
+        flex-direction:column;
+        gap:8px;
+        text-align:center;
+    }
+
+    .label,
+    .value{
+        width:100%;
+        text-align:center;
+    }
+
+    form{
+        max-width:100%;
+    }
 }
 
-@media(max-width:768px){
 
-.label{
-
-    width:100%;
-
-    text-align:center;
-
-}
-
-.value{
-
-    width:100%;
-
-    text-align:center;
-
-}
-
-}
 
 img{
 
