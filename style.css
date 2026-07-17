@@ -205,28 +205,29 @@ img {
 
 }
 
+.info-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+    border-bottom:1px solid #475569;
+}
+
+.info-row:last-child{
+    border-bottom:none;
+}
+
 .label{
-    width:180px;
+    width:250px;
     color:#60a5fa;
     font-weight:bold;
-    text-align:right;
+    text-align:center;
 }
 
 .value{
-    width:350px;
-    color:white;
-    text-align:left;
-}
-
-.label{
-    color:#60a5fa;
-    font-weight:bold;
-    text-align:left;
-}
-
-.value{
-    color:white;
-    text-align:left;
+    flex:1;
+    color:#fff;
+    text-align:center;
 }
 
 .value a{
@@ -424,6 +425,16 @@ footer{
     gap:10px;
 
     padding:12px;
+    .info-row{
+    flex-direction:column;
+    gap:8px;
+}
+
+.label,
+.value{
+    width:100%;
+    text-align:center;
+}
 
 }
 
