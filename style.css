@@ -301,44 +301,82 @@ article p{
 }
 /* Form */
 
+/* ===============================
+   FORM
+=================================*/
+
 form{
     width:100%;
-    max-width:700px;
-    margin:auto;
+    max-width:900px;
+    margin:0 auto;
 }
 
 label{
     display:block;
-    margin-top:15px;
-    margin-bottom:5px;
-    color:white;
+    margin:18px 0 8px;
+    font-size:18px;
+    font-weight:600;
+    color:#fff;
 }
 
 input,
 textarea{
     width:100%;
-    box-sizing:border-box;
+    padding:14px 16px;
+    font-size:16px;
+    color:#fff;
+    background:#0f172a;
+    border:2px solid #475569;
+    border-radius:10px;
+    outline:none;
+    transition:.3s;
+}
+
+input{
+    height:52px;
+}
+
+textarea{
+    min-height:180px;
+    resize:vertical;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:#94a3b8;
 }
 
 input:focus,
 textarea:focus{
-    outline:3px solid #93c5fd;
+    border-color:#2563eb;
+    box-shadow:0 0 12px rgba(37,99,235,.4);
 }
 
 button{
-    margin-top:18px;
     width:100%;
-    padding:13px;
+    margin-top:25px;
+    padding:15px;
     border:none;
-    border-radius:25px;
-    background:var(--primary);
-    color:white;
+    border-radius:50px;
+    background:#2563eb;
+    color:#fff;
+    font-size:18px;
     font-weight:bold;
     cursor:pointer;
+    transition:.3s;
 }
 
 button:hover{
-    background:#1e40af;
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill{
+    -webkit-box-shadow:0 0 0 1000px #0f172a inset;
+    -webkit-text-fill-color:#fff;
 }
 
 .doc-btn{
@@ -413,44 +451,56 @@ footer{
    MOBILE NAVIGATION
 =================================*/
 
+/* ===============================
+   RESPONSIVE
+=================================*/
+
 @media (max-width:768px){
 
-.navbar{
+    .navbar{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+        padding:12px;
+    }
 
-    display:flex;
-    flex-wrap:wrap;
+    .navbar a{
+        min-width:120px;
+        padding:10px 15px;
+        font-size:15px;
+        text-align:center;
+    }
 
-    justify-content:center;
+    .header h1{
+        font-size:32px;
+    }
 
-    gap:10px;
+    .header p{
+        font-size:16px;
+    }
 
-    padding:12px;
     .info-row{
-    flex-direction:column;
-    gap:8px;
-}
+        flex-direction:column;
+        text-align:center;
+        gap:8px;
+    }
 
-.label,
-.value{
-    width:100%;
-    text-align:center;
-}
+    .label,
+    .value{
+        width:100%;
+        text-align:center;
+    }
 
-}
+    .hero img,
+    .profile-img{
+        width:140px;
+        height:140px;
+    }
 
-.navbar a{
-
-    width:auto;
-
-    min-width:120px;
-
-    text-align:center;
-
-    padding:10px 15px;
-
-    font-size:15px;
-
-}
+    form{
+        max-width:100%;
+    }
 
 }
 
