@@ -191,7 +191,7 @@ img {
     display:grid;
     grid-template-columns:220px 1fr;
     align-items:center;
-    column-gap:140px;      /* Space in the center */
+    column-gap:80px;      /* Space in the center */
     padding:22px 0;
     border-bottom:1px solid #475569;
 }
@@ -202,16 +202,16 @@ img {
 
 .label{
     color:#60a5fa;
-    font: size 16px;
+    font-size:16px;
     font-weight:600;
     text-align:left;
 }
 
 .value{
     color:#ffffff;
-    font: size 16px;
+    font-size:16px;
     text-align:left;
-    flex:0 0 55%;
+    
 }
 
 .value a{
@@ -467,53 +467,29 @@ footer{
         font-size:16px;
     }
 
+    .card{
+        padding:20px;
+    }
+
+    .personal-info,
+    .contact-info{
+        width:100%;
+    }
+
     .info-row{
-        flex-direction:column;
+        display:grid;
+        grid-template-columns:1fr;
+        row-gap:10px;
         text-align:center;
-        gap:8px;
     }
 
     .label,
     .value{
         width:100%;
-        font-size:14px;
-        text-align:center;
-    }
-
-    .hero img,
-    .profile-img{
-        width:140px;
-        height:140px;
-    }
-
-    form{
-        max-width:100%;
-    }
-
-}
-@media (max-width:768px){
-
-    .navbar{
-        display:flex;
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:10px;
-        padding:12px;
-    }
-
-    .navbar a{
-        min-width:120px;
-        padding:10px 15px;
         font-size:15px;
         text-align:center;
-    }
-
-    .header h1{
-        font-size:32px;
-    }
-
-    .header p{
-        font-size:16px;
+        justify-self:center;
+        word-break:break-word;
     }
 
     .hero img,
@@ -522,23 +498,10 @@ footer{
         height:140px;
     }
 
-    .info-row{
-        flex-direction:column;
-        gap:8px;
-        text-align:center;
-    }
-
-    .label,
-    .value{
-        width:100%;
-        text-align:center;
-    }
-
     form{
         max-width:100%;
     }
 }
-
 
 
 img{
