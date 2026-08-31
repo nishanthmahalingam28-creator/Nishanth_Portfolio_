@@ -316,6 +316,61 @@ article p{
     line-height: 1.7;
     opacity: 0.75;
 }
+/* ================= TECHNOLOGIES ================= */
+
+.technologies {
+    padding: 60px 8%;
+}
+
+.technologies h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* Side-by-side layout */
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Technology card */
+
+.tech-card {
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.04);
+    transition: 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.tech-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.tech-card ul {
+    padding-left: 25px;
+    margin: 0;
+}
+
+.tech-card li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* ================= MOBILE ================= */
+
+
 
 /* Workflow container */
 
@@ -648,6 +703,13 @@ footer{
 
     form{
         max-width:100%;
+    }
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .technologies h2 {
+        font-size: 30px;
     }
 }
 
