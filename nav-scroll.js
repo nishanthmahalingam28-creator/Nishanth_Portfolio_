@@ -15,14 +15,14 @@ function closeMenu() {
     if (!navbar || !menuToggle) return;
     navbar.classList.remove("open");
     menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.textContent = "=";
+    menuToggle.textContent = "☰";
 }
 
 function toggleMenu() {
     if (!navbar || !menuToggle) return;
     const isOpen = navbar.classList.toggle("open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.textContent = isOpen ? "×" : "=";
+    menuToggle.textContent = isOpen ? "×" : "☰";
 }
 
 if (menuToggle) {
