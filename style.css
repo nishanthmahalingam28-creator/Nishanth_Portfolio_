@@ -16,6 +16,7 @@ body{
     background:var(--background);
     color:var(--text);
     line-height:1.7;
+    padding-top:72px;
 }
 
 /* Header */
@@ -45,9 +46,41 @@ body{
     gap:20px;
     background:var(--primary);
     padding:15px;
-    position:sticky;
+    position:fixed;
     top:0;
+    left:0;
+    width:100%;
     z-index:100;
+    flex-wrap:wrap;
+}
+
+.menu-toggle{
+    display:none;
+    width:auto;
+    margin:0;
+    padding:4px 14px;
+    border:none;
+    border-radius:8px;
+    background:transparent;
+    color:#fff;
+    font-size:32px;
+    font-weight:700;
+    line-height:1;
+    cursor:pointer;
+    transform:none;
+}
+
+.menu-toggle:hover{
+    background:white;
+    color:var(--primary);
+    transform:none;
+}
+
+.nav-links{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
     flex-wrap:wrap;
 }
 
@@ -60,9 +93,20 @@ body{
     transition:0.3s;
 }
 
-.navbar a:hover{
+.navbar a:hover,
+.navbar a.active{
     background:white;
     color:var(--primary);
+}
+
+.page-section,
+#home{
+    scroll-margin-top:90px;
+}
+
+.section-heading{
+    font-size:34px;
+    margin:10px 0 25px;
 }
 
 /* Main */
@@ -625,17 +669,47 @@ footer{
 
     .navbar{
         display:flex;
-        flex-wrap:wrap;
-        justify-content:center;
+        justify-content:flex-end;
+        align-items:center;
+        flex-wrap:nowrap;
         gap:10px;
-        padding:12px;
+        padding:8px 16px;
+        min-height:56px;
+    }
+
+    body{
+        padding-top:72px;
+    }
+
+    .menu-toggle{
+        display:block;
+        z-index:101;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        flex-direction:column;
+        gap:0;
+        background:var(--primary);
+        padding:8px 0 12px;
+        box-shadow:0 12px 24px rgba(0,0,0,0.25);
+    }
+
+    .navbar.open .nav-links{
+        display:flex;
     }
 
     .navbar a{
-        min-width:120px;
-        padding:10px 15px;
-        font-size:15px;
+        min-width:unset;
+        width:100%;
+        padding:14px 20px;
+        font-size:16px;
         text-align:center;
+        border-radius:0;
     }
 
     .header h1{
@@ -731,5 +805,6 @@ img{
 html{
 
     scroll-behavior:smooth;
+    scroll-padding-top:80px;
 
 }

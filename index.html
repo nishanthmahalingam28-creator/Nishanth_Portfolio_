@@ -9,19 +9,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
+    <nav class="navbar">
+        <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false">☰</button>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="project.html">Projects</a>
+            <a href="internship.html">Internship</a>
+            <a href="certificate.html">Certificates</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <header class="header" id="home">
         <h1>NISHANTH M</h1>
         <p>BE Computer Science and Engineering</p>
         <p>KPR Institute of Engineering and Technology</p>
     </header>
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="project.html">Projects</a>
-        <a href="internship.html">Internship</a>
-        <a href="certificate.html">Certificates</a>
-        <a href="contact.html">Contact</a>
-    </nav>
     <main>
         <section class="hero">
             <h2>Welcome to My Portfolio</h2>
@@ -71,9 +74,358 @@
                 </div>
             </div>
         </section>
+
+        <section class="page-section" id="about">
+            <h2 class="section-heading">About Me</h2>
+            <section class="card">
+                <h2>Personal Information</h2>
+                <div class="personal-info">
+                    <div class="info-row">
+                        <span class="label">Name</span>
+                        <span class="value">Nishanth M</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Degree</span>
+                        <span class="value">B.E Computer Science and Engineering</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Institution</span>
+                        <span class="value">KPR Institute of Engineering and Technology</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Location</span>
+                        <span class="value">Coimbatore, Tamil Nadu, India</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Current Status</span>
+                        <span class="value">Second Year Undergraduate Student</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Career Interest</span>
+                        <span class="value">Software Development & Web Development</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Goal</span>
+                        <span class="value">To Become a Skilled Software Engineer</span>
+                    </div>
+                </div>
+            </section>
+            <section class="card">
+                <h2>My Interests</h2>
+                <div class="skills">
+                    <span>Programming</span>
+                    <span>Web Development</span>
+                    <span>Data Analysis</span>
+                    <span>Software Development</span>
+                    <span>Problem Solving</span>
+                </div>
+            </section>
+            <section class="card">
+                <h2>Career Objective</h2>
+                <p class="para">
+                    To become a skilled Software Engineer and Web Developer by
+                    continuously learning emerging technologies and gaining practical
+                    experience through projects, internships, and industry exposure.
+                </p>
+            </section>
+        </section>
+
+        <section class="page-section" id="project">
+            <h2 class="section-heading">Projects</h2>
+            <section class="card">
+                <h2>Project List</h2>
+                <article>
+                    <h3>1. Heart Disease Risk Prediction Using Machine Learning</h3>
+                    <p>
+                        A machine learning project that predicts heart disease risk
+                        using patient health data and classification algorithms.
+                    </p>
+                    <a class="doc-btn" href="project_file/heart.html">Click here to View Project Details</a>
+                </article>
+                <article>
+                    <h3>2. Stroke Prediction Using Machine Learning</h3>
+                    <p>
+                        A machine Learning project that predicts the likelihood of stroke in patients
+                        based on various health and lifestyle factors.
+                    </p>
+                    <a class="doc-btn" href="project_file/stroke.html">Click here to View Project Details</a>
+                </article>
+                <article>
+                    <h3>3. Smart Adaptive Headlamp Cutoff System</h3>
+                    <p>
+                        A smart vehicle safety system that automatically adjusts
+                        headlamp intensity to reduce glare for oncoming vehicles
+                        and improve night driving safety.
+                    </p>
+                    <a class="doc-btn" href="project_file/smartheadlamp.html">Click here to View Project Details</a>
+                </article>
+                <article>
+                    <h3>4. Personal Portfolio Website</h3>
+                    <p>
+                        A responsive personal portfolio website created using HTML5
+                        and CSS3. It includes Home, About, Projects, Internship,
+                        and Contact sections on a single scrolling page.
+                    </p>
+                </article>
+            </section>
+        </section>
+
+        <section class="page-section" id="internship">
+            <h2 class="section-heading">Internship</h2>
+            <section class="card">
+                <h2>Internship Experience</h2>
+                <article>
+                    <h3>1. Python Programming Internship</h3>
+                    <p>
+                        Worked on Python programming concepts including
+                        data structures, file handling, and problem-solving.
+                    </p>
+                    <p><strong>Organization:</strong> Code Alpha</p>
+                    <p><strong>Duration:</strong> 4 Weeks</p>
+                    <p><strong>Mode:</strong> Online</p>
+                    <br>
+                    <a href="Document/Internship/code alpha offer.pdf" target="_blank" class="doc-btn">
+                        📄 View Offer Letter
+                    </a>
+                    <br>
+                    <a href="Document/Internship/Code_alpha_Certificate.pdf" target="_blank" class="doc-btn">
+                        🏆 View Certificate
+                    </a>
+                    <br>
+                    <a href="Document/Internship/Code_alpha_LOR.pdf" target="_blank" class="doc-btn">
+                        📄 View Letter Of Recommendation
+                    </a>
+                </article>
+                <article>
+                    <h3>2. Web Development Internship</h3>
+                    <p>
+                        Successfully completed a Web Development Internship focused on
+                        HTML5, CSS3, Responsive Design, CSS Grid, Flexbox and GitHub Pages.
+                    </p>
+                    <p><strong>Organization:</strong>Thiranex</p>
+                    <p><strong>Duration:</strong> 4 Weeks</p>
+                    <p><strong>Mode:</strong> Online</p>
+                    <br>
+                    <a href="Document/Internship/Thiranex offer.pdf" target="_blank" class="doc-btn">
+                        📄 View Offer Letter
+                    </a>
+                    <br>
+                    <a href="Document/Internship/Thiranex_Certificate.pdf" target="_blank" class="doc-btn">
+                        🏆  View Certificate
+                    </a>
+                </article>
+            </section>
+        </section>
+
+        <section class="page-section" id="certificate">
+            <h2 class="section-heading">Certificates</h2>
+            <section class="card">
+                <h2>Online Courses</h2>
+                <article>
+                    <h3>1. AWS Certificate</h3>
+                    <p>
+                        AWS Cloud Practitioner Essentials certification demonstrates a foundational understanding of AWS Cloud concepts, services, and best practices.
+                    </p>
+                    <a href="Document/Certificate/Online/AWS.pdf" target="_blank" class="doc-btn">
+                        📄 View Certificate
+                    </a>
+                </article>
+                <article>
+                    <h3>2. Cisco Certificate</h3>
+                    <p>
+                        Getting Started with Cisco Packet Tracer certification demonstrates a foundational understanding of Cisco networking concepts, services, and best practices.
+                    </p>
+                    <a href="Document/Certificate/Online/Cisco.pdf" target="_blank" class="doc-btn">
+                        📄 View Certificate
+                    </a>
+                </article>
+                <article>
+                    <h3>3. Coursera Certificate</h3>
+                    <p>
+                        Google AI Essentials certification demonstrates a foundational understanding of AI concepts, services, and best practices.
+                    </p>
+                    <a href="Document/Certificate/Online/Coursera.pdf" target="_blank" class="doc-btn">
+                        📄 View Certificate
+                    </a>
+                </article>
+                <article>
+                    <h3>4. HP Life Certificate</h3>
+                    <p>
+                        AI For Beginners certification demonstrates a foundational understanding of AI concepts, services, and best practices.
+                    </p>
+                    <a href="Document/Certificate/Online/Hp life AI for Beginners.pdf" target="_blank" class="doc-btn">
+                        📄 View Certificate
+                    </a>
+                </article>
+                <article>
+                    <h3>5. MATLAB Onramp Certificate</h3>
+                    <p>
+                        MATLAB Onramp certification demonstrates a foundational understanding of MATLAB concepts, services, and best practices.
+                    </p>
+                    <a href="Document/Certificate/Online/MATLAB Onramp.pdf" target="_blank" class="doc-btn">
+                        📄 View Certificate
+                    </a>
+                </article>
+                <article>
+                    <h3>6. Statistics Onramp Certificate</h3>
+                    <p>
+                        Statistics Onramp certification demonstrates a foundational understanding of statistics concepts, services, and best practices.
+                    </p>
+                    <a href="Document/Certificate/Online/Statistics Onramp.pdf" target="_blank" class="doc-btn">
+                        📄 View Certificate
+                    </a>
+                </article>
+                <article>
+                    <h3>7. NSE1</h3>
+                    <p>
+                        Cyber Security And Cloud Fundamentals certification demonstrates a foundational understanding of Cyber Security And Cloud concepts, services, and best practices.
+                    </p>
+                    <a href="Document/Certificate/Online/NSE1.pdf" target="_blank" class="doc-btn">
+                        📄 View Certificate
+                    </a>
+                </article>
+                <article>
+                    <h3>8. NSE2</h3>
+                    <p>
+                        Introduction to Next Generation Firewall certification demonstrates a foundational understanding of Next Generation Firewall concepts, services, and best practices.
+                    </p>
+                    <a href="Document/Certificate/Online/NSE2.pdf" target="_blank" class="doc-btn">
+                        📄 View Certificate
+                    </a>
+                </article>
+            </section>
+            <section class="card">
+                <h2>Participations Certificate</h2>
+                <article>
+                    <h3>1. Logic Survivors </h3>
+                    <p>
+                        <strong>Event Name:</strong>IEEE
+                    </p>
+                    <p><strong>College Name:</strong> KPR INSTITUTE OF ENGINEERING AND TECHNOLOGY</p>
+                    <a href="Document/Certificate/Participation/IEE.pdf" target="_blank" class="doc-btn">
+                        📄 View Certificate
+                    </a>
+                </article>
+                <article>
+                    <h3>2. Ideathon</h3>
+                    <p>
+                        <strong>Event Name:</strong> Ideathon
+                    </p>
+                    <p><strong>College Name:</strong> HINDUSTHAN COLLEGE OF ARTS AND SCIENCE,COIMBATORE </p>
+                    <a href="Document/Certificate/Participation/Hindustan Ideathon.pdf" target="_blank" class="doc-btn">
+                        📄 View Certificate
+                    </a>
+                </article>
+                <article>
+                    <h3>3. IEEE Quiz</h3>
+                    <p>
+                        <strong>Event Name:</strong> IEEE Quiz
+                    </p>
+                    <p><strong>College Name:</strong> KPR INSTITUTE OF ENGINEERING AND TECHNOLOGY </p>
+                    <a href="Document/Certificate/Participation/IEEE Quiz.png" target="_blank" class="doc-btn">
+                        📄 View Certificate
+                    </a>
+                </article>
+                <article>
+                    <h3>4. Moonshot Workshop</h3>
+                    <p>
+                        <strong>Event Name:</strong> Moonshot Workshop
+                    </p>
+                    <p><strong>College Name:</strong> KPR INSTITUTE OF ENGINEERING AND TECHNOLOGY </p>
+                    <a href="Document/Certificate/Participation/YUVA Club workshop certificate.jpg" target="_blank" class="doc-btn">
+                        📄 View Certificate
+                    </a>
+                </article>
+            </section>
+        </section>
+
+        <section class="page-section" id="contact">
+            <h2 class="section-heading">Contact Me</h2>
+            <section class="card">
+                <h2>Contact Information</h2>
+                <div class="contact-info">
+                    <div class="info-row">
+                        <span class="label">Name</span>
+                        <span class="value">Nishanth M</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Email</span>
+                        <span class="value">
+                            <a href="mailto:25cs170@kpriet.ac.in">25cs170@kpriet.ac.in</a>
+                        </span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">College</span>
+                        <span class="value">KPR Institute of Engineering and Technology</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Location</span>
+                        <span class="value">Coimbatore, Tamil Nadu, India</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">GitHub</span>
+                        <span class="value">
+                            <a href="https://github.com/nishanthmahalingam28-creator" target="_blank" rel="noopener noreferrer">
+                                View GitHub Profile
+                            </a>
+                        </span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">LinkedIn</span>
+                        <span class="value">
+                            <a href="https://www.linkedin.com/in/nishanth-mahalingam-073849380?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                View LinkedIn Profile
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </section>
+            <section class="card">
+                <h2>Send a Message</h2>
+                <form id="contactForm">
+                    <label for="name">Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                    <small id="emailError"></small>
+                    <label for="subject">Subject</label>
+                    <input
+                        type="text"
+                        id="subject"
+                        placeholder="Enter subject"
+                        required
+                    >
+                    <label for="message">Message</label>
+                    <textarea
+                        id="message"
+                        rows="5"
+                        placeholder="Enter your message"
+                        required
+                    ></textarea>
+                    <button id="submitBtn" type="submit">
+                        Send Message
+                    </button>
+                    <p id="statusMessage"></p>
+                </form>
+            </section>
+        </section>
     </main>
     <footer>
         <p>&copy; 2026 Nishanth M. All Rights Reserved.</p>
     </footer>
+    <script type="module" src="contact.js"></script>
+    <script src="nav-scroll.js"></script>
 </body>
 </html>
