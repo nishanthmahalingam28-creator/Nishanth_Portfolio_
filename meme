@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enna Da Pannivechurukinga Meme</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@700;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #171717;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 650px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ffcc00;
+      font-size: 28px;
+    }
+
+    .subtitle {
+      color: #bbb;
+      margin-bottom: 24px;
+    }
+
+    .controls {
+      background: #292929;
+      padding: 20px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 7px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #555;
+      border-radius: 8px;
+      background: #1b1b1b;
+      color: white;
+      font-size: 15px;
+    }
+
+    .preview {
+      background: #fff;
+      padding: 8px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    button {
+      margin-top: 18px;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 9px;
+      background: #ffcc00;
+      color: #111;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ffe066;
+    }
+
+    .footer {
+      color: #888;
+      font-size: 12px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <h1>😂 MEME GENERATOR</h1>
+    <p class="subtitle">Enna da pannivechurukinga template!</p>
+
+    <section class="controls">
+      <label for="photo">Upload meme photo</label>
+      <input type="file" id="photo" accept="image/*">
+
+      <label for="topText">Top text</label>
+      <input
+        id="topText"
+        value="என்னடா"
+        placeholder="Enter top text"
+      >
+
+      <label for="bottomText">Bottom text</label>
+      <input
+        id="bottomText"
+        value="பண்ணி வெச்சிருக்கீங்க?"
+        placeholder="Enter bottom text"
+      >
+    </section>
+
+    <div class="preview">
+      <canvas id="memeCanvas" width="600" height="600"></canvas>
+    </div>
+
+    <button id="download">⬇ Download Meme</button>
+
+    <p class="footer">Made for ultimate Tamil meme moments 😂</p>
+  </main>
+
+  <script>
+    const canvas = document.getElementById("memeCanvas");
+    const ctx = canvas.getContext("2d");
+
+    const photoInput = document.getElementById("photo");
+    const topInput = document.getElementById("topText");
+    const bottomInput = document.getElementById("bottomText");
+
+    let uploadedImage = null;
+
+    function drawMeme() {
+      const width = canvas.width;
+      const height = canvas.height;
+
+      // Background
+      ctx.fillStyle = "#d7d7d7";
+      ctx.fillRect(0, 0, width, height);
+
+      if (uploadedImage) {
+        const scale = Math.max(
+          width / uploadedImage.width,
+          height / uploadedImage.height
+        );
+
+        const imageWidth = uploadedImage.width * scale;
+        const imageHeight = uploadedImage.height * scale;
+
+        ctx.drawImage(
+          uploadedImage,
+          (width - imageWidth) / 2,
+          (height - imageHeight) / 2,
+          imageWidth,
+          imageHeight
+        );
+      } else {
+        // Default placeholder
+        ctx.fillStyle = "#303030";
+        ctx.fillRect(0, 0, width, height);
+
+        ctx.fillStyle = "#ffcc00";
+        ctx.textAlign = "center";
+        ctx.font = "bold 100px Arial";
+        ctx.fillText("😂", width / 2, 280);
+
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "bold 25px Arial";
+        ctx.fillText("UPLOAD YOUR MEME PHOTO", width / 2, 350);
+      }
+
+      drawText(topInput.value, 55);
+      drawText(bottomInput.value, height - 35);
+    }
+
+    function drawText(text, y) {
+      if (!text.trim()) return;
+
+      const width = canvas.width;
+      const maxWidth = width - 30;
+
+      let fontSize = 43;
+
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+
+      // Fit the text within the canvas
+      do {
+        ctx.font = `900 ${fontSize}px "Noto Sans Tamil", sans-serif`;
+        fontSize--;
+      } while (
+        ctx.measureText(text).width > maxWidth &&
+        fontSize > 16
+      );
+
+      ctx.lineJoin = "round";
+      ctx.strokeStyle = "black";
+      ctx.lineWidth = 6;
+      ctx.fillStyle = "white";
+
+      ctx.strokeText(text, width / 2, y, maxWidth);
+      ctx.fillText(text, width / 2, y, maxWidth);
+    }
+
+    photoInput.addEventListener("change", event => {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const image = new Image();
+
+      image.onload = () => {
+        uploadedImage = image;
+        drawMeme();
+        URL.revokeObjectURL(image.src);
+      };
+
+      image.src = URL.createObjectURL(file);
+    });
+
+    topInput.addEventListener("input", drawMeme);
+    bottomInput.addEventListener("input", drawMeme);
+
+    document.fonts.ready.then(drawMeme);
+
+    document.getElementById("download").addEventListener("click", () => {
+      canvas.toBlob(blob => {
+        if (!blob) {
+          alert("Could not create meme. Please try again.");
+          return;
+        }
+
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+
+        link.href = url;
+        link.download = "enna-da-pannivechurukinga-meme.png";
+        link.click();
+
+        URL.revokeObjectURL(url);
+      }, "image/png");
+    });
+
+    drawMeme();
+  </script>
+</body>
+</html>
